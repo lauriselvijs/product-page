@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/all.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Questrial" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>SkyWeb</title>
+</head>
+
+<body>
+  <div class="black-bar">
+    <div class="join">JOIN</div>
+    <div class="space">|</div>
+    <div class="sign-in">SIGN IN</div>
+  </div>
+  <div class="topnav" id="myTopnav">
+    <a href="javascript:void(0);" class="icon" onclick="showMenu()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <img style="float:left" className="sky-web-logo" src="img/skyweb-logo.png" alt="Delivery" />
+    <a class="shop" href="#shop">SHOP</a>
+    <a href="#learn">LEARN</a>
+    <a href="#fit">FIT</a>
+    <a href="#inspire">INSPIRE</a>
+    <a href="#connect">CONNECT</a>
+    <img style="float:right" className="shopping-bag" src="img/icons/shopping-bag.png" alt="Shopping bag" />
+  </div>
+
+  <div class="flex-container">
+    <div class="product-picture">
+      <img style="width:90%" src="img/shirt.png" alt="White shirt" />
+    </div>
+    <div class="product-info">
+      <h1 class="product-title">Palermo - White Twill 100s Dress Shirt</h1>
+      <h3 class="product-price">$90</h3>
+
+      <h4 class="product-info-fit">
+        <img class="delivery-img" src="img/icons/delivery.png" alt="Delivery" />
+        GUARANTEED FIT
+      </h4>
+
+      <h4 class="product-info-hand-cut">
+        <img src="img/icons/guarantee.png" alt="Guarantee" />100% HAND CUT &
+        SEWN
+      </h4>
+
+      <h4 class="product-info-delivery">
+        <img src="img/icons/scissors.png" alt="Scissors" /> DELIVERY BETWEEN
+        <span style="font-weight: bold">JAN 19 - JAN 22</span>
+      </h4>
+
+      <button class="add-to-cart">ADD TO CART</button>
+      <div class="add-desc">
+
+        <h2 class="about">ABOUT THIS BLEND <i id="arrow-about" class="fas fa-angle-up" style="float: right;"></i></h2>
+        <hr id="lane-about" class="line-active">
+        <p id="about-p" class="about-this-paragraph">Indian Assam. Sri Lankan Ceylon.
+          We always buy the most recent harvest here at Tea HQ for the freshest tea.
+          It's got a 2 year shelf life once it gets to you - but don't worry,
+          you'll have drunk it by then. </p>
+
+        <h2 class="tasting">TASTING NOTES<i id="arrow-tasting" class="fas fa-angle-up" style="float: right;"></i></h2>
+        <hr id="lane-tasting" class="line-active">
+        <p class="tasting-notes-paragraph">Indian Assam. Sri Lankan Ceylon.
+          We always buy the most recent harvest here at Tea HQ for the freshest tea.
+          It's got a 2 year shelf life once it gets to you - but don't worry,
+          you'll have drunk it by then. </p>
+
+        <h2 class="shipping">SHIPPING<i id="arrow-shipping" class="fas fa-angle-up" style="float: right;"></i></h2>
+        <hr id="lane-shipping" class="line-active">
+        <p class="shipping-paragraph">Shipping is free over £15 (£3.95 below £15).
+          Place your order before 3pm and we'll ship it that same day (Mon-Fri).
+          It'll go First Class with Royal Mail, unless you need DPD Next Day which is £10.
+          International is little different, click here. </p>
+
+        <h2 class="compost">COMPOST YOUR PACKAGING<i id="arrow-compost" class="fas fa-angle-up"
+            style="float: right;"></i></h2>
+        <hr id="lane-compost" class="line-active">
+        <p class="compost-paragraph">Shipping is free over £15 (£3.95 below £15).
+          Place your order before 3pm and we'll ship it that same day (Mon-Fri).
+          It'll go First Class with Royal Mail, unless you need DPD Next Day which is £10.
+          International is little different, click here. </p>
+      </div>
+    </div>
+    <script>
+
+
+      function showMenu() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+
+      $('#arrow-about').click(function () {
+        $('.about-this-paragraph').slideToggle();
+        $("#lane-about").toggleClass("line-active line-disabled");
+        $("#arrow").toggleClass("fas fa-angle-down fas fa-angle-up");
+      })
+
+      $('#arrow-shipping').click(function () {
+        $('.shipping-paragraph').slideToggle();
+        $("#lane-shipping").toggleClass("line-active line-disabled");
+        $("#arrow-shipping").toggleClass("fas fa-angle-down fas fa-angle-up");
+      })
+
+      $('#arrow-tasting').click(function () {
+        $('.tasting-notes-paragraph').slideToggle();
+        $("#lane-tasting").toggleClass("line-active line-disabled");
+        $("#arrow-tasting").toggleClass("fas fa-angle-down fas fa-angle-up");
+      })
+
+      $('#arrow-compost').click(function () {
+        $('.compost-paragraph').slideToggle();
+        $("#lane-compost").toggleClass("line-active line-disabled");
+        $("#arrow-compost").toggleClass("fas fa-angle-down fas fa-angle-up");
+      })
+
+    </script>
+
+
+</body>
+
+</html>

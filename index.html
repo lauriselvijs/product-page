@@ -19,17 +19,23 @@
     <div class="space">|</div>
     <div class="sign-in">SIGN IN</div>
   </div>
-  <div class="topnav" id="myTopnav">
-    <a href="javascript:void(0);" class="icon" onclick="showMenu()">
+  <div class="topnav">
+    <a class="hamburger-menu">
       <i class="fa fa-bars"></i>
     </a>
-    <img style="float:left" className="sky-web-logo" src="img/skyweb-logo.png" alt="Delivery" />
-    <a class="shop" href="#shop">SHOP</a>
-    <a href="#learn">LEARN</a>
-    <a href="#fit">FIT</a>
-    <a href="#inspire">INSPIRE</a>
-    <a href="#connect">CONNECT</a>
-    <img style="float:right" className="shopping-bag" src="img/icons/shopping-bag.png" alt="Shopping bag" />
+    <img className="sky-web-logo" src="img/skyweb-logo.png" alt="Skyweb logo" />
+    <div class="menu" id="hamburger-menu-items">
+      <a class="shop" href="#shop">SHOP</a>
+      <a href="#learn">LEARN</a>
+      <a href="#fit">FIT</a>
+      <a href="#inspire">INSPIRE</a>
+      <a href="#connect">CONNECT</a>
+    </div>
+
+
+    <div class="shopping-bag">
+      <img className="shopping-bag-img" src="img/icons/shopping-bag.png" alt="Shopping bag" />
+    </div>
   </div>
 
   <div class="flex-container">
@@ -91,38 +97,50 @@
     <script>
 
 
-      function showMenu() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
 
-      $('#arrow-about').click(function () {
-        $('.about-this-paragraph').slideToggle();
-        $("#lane-about").toggleClass("line-active line-disabled");
-        $("#arrow-about").toggleClass("fas fa-angle-down fas fa-angle-up");
-      })
 
-      $('#arrow-shipping').click(function () {
-        $('.shipping-paragraph').slideToggle();
-        $("#lane-shipping").toggleClass("line-active line-disabled");
-        $("#arrow-shipping").toggleClass("fas fa-angle-down fas fa-angle-up");
-      })
+      $(document).ready(function () {
+        $(".hamburger-menu").click(function () {
+          $("#hamburger-menu-items").toggleClass("menu-mobile menu", function () {
+            $('#hamburger-menu-items').slideToggle("fast")
+          });
+        });
 
-      $('#arrow-tasting').click(function () {
-        $('.tasting-notes-paragraph').slideToggle();
-        $("#lane-tasting").toggleClass("line-active line-disabled");
-        $("#arrow-tasting").toggleClass("fas fa-angle-down fas fa-angle-up");
-      })
 
-      $('#arrow-compost').click(function () {
-        $('.compost-paragraph').slideToggle();
-        $("#lane-compost").toggleClass("line-active line-disabled");
-        $("#arrow-compost").toggleClass("fas fa-angle-down fas fa-angle-up");
-      })
+        $(window).on('resize', function () {
+          if ($(window).width() > 800) {
+            $('#hamburger-menu-items').addClass('menu');
+          }
+        });
+
+
+        $('#arrow-about').click(function () {
+          $('.about-this-paragraph').slideToggle();
+          $("#lane-about").toggleClass("line-active line-disabled");
+          $("#arrow-about").toggleClass("fas fa-angle-down fas fa-angle-up");
+        })
+
+        $('#arrow-shipping').click(function () {
+          $('.shipping-paragraph').slideToggle();
+          $("#lane-shipping").toggleClass("line-active line-disabled");
+          $("#arrow-shipping").toggleClass("fas fa-angle-down fas fa-angle-up");
+        })
+
+        $('#arrow-tasting').click(function () {
+          $('.tasting-notes-paragraph').slideToggle();
+          $("#lane-tasting").toggleClass("line-active line-disabled");
+          $("#arrow-tasting").toggleClass("fas fa-angle-down fas fa-angle-up");
+        })
+
+        $('#arrow-compost').click(function () {
+          $('.compost-paragraph').slideToggle();
+          $("#lane-compost").toggleClass("line-active line-disabled");
+          $("#arrow-compost").toggleClass("fas fa-angle-down fas fa-angle-up");
+        })
+      });
+
+
+
 
     </script>
 
